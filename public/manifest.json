@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Companion",
+  "version": "0.1.0",
+  "description": "현재 보고 있는 페이지에서 질문하고 대화를 이어가는 브라우저 도우미",
+  "action": {
+    "default_title": "Browser Companion 열기"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "permissions": ["sidePanel"]
+}
