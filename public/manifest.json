@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Browser Companion",
   "version": "0.1.0",
-  "description": "현재 보고 있는 페이지에서 질문하고 대화를 이어가는 브라우저 도우미",
+  "description": "유튜브 영상에 들어가면 전체 자막을 준비하는 학습 도우미",
   "action": {
     "default_title": "Browser Companion 열기"
   },
@@ -13,5 +13,6 @@
     "service_worker": "service-worker.js",
     "type": "module"
   },
-  "permissions": ["sidePanel"]
+  "permissions": ["sidePanel", "scripting", "storage"],
+  "host_permissions": ["https://www.youtube.com/*"]
 }
