@@ -73,3 +73,88 @@ body {
 .video-info dd {
   margin: 0;
 }
+
+.key-settings {
+  margin-bottom: 24px;
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 8px;
+}
+
+summary {
+  cursor: pointer;
+}
+form {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+input,
+textarea,
+button {
+  box-sizing: border-box;
+  font: inherit;
+  color: CanvasText;
+  background: Canvas;
+  border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+input,
+textarea {
+  width: 100%;
+  min-width: 0;
+}
+textarea {
+  resize: vertical;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+.actions,
+.chat-heading {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.chat {
+  margin-top: 24px;
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+  padding-top: 20px;
+}
+.chat-heading {
+  justify-content: space-between;
+}
+.chat-heading h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.muted,
+.timestamp {
+  font-size: 12px;
+  opacity: 0.75;
+}
+.question,
+.answer {
+  white-space: pre-wrap;
+}
+.question {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, currentColor 6%, transparent);
+}
+.turn {
+  margin-block: 20px;
+}

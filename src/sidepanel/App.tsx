@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getVideoId, transcriptKey, type TranscriptState } from '../youtube';
+import { ApiKeySettings } from './ApiKeySettings';
+import { Chat } from './Chat';
 
 type View = { tabId?: number; state?: TranscriptState; error?: string };
 
@@ -108,6 +110,7 @@ export function App() {
         <h1>Browser Companion</h1>
       </header>
       <section className="welcome" aria-labelledby="welcome-title">
+        <ApiKeySettings />
         <h2 id="welcome-title">영상 자막</h2>
         <p>유튜브 영상에 들어가면 전체 자막을 자동으로 준비해요.</p>
         {view.error && (
@@ -131,6 +134,9 @@ export function App() {
               <dt>자막 개수</dt>
               <dd>{state.captions.length}개</dd>
             </dl>
+            {view.tabId !== undefined && (
+              <Chat key={`${view.tabId}:${state.videoId}`} tabId={view.tabId} transcript={state} />
+            )}
           </>
         )}
         {(state?.status === 'error' || state?.status === 'unavailable') && (

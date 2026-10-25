@@ -121,7 +121,10 @@ function setup({ data = {}, inject = async (id) => fixture(id), panelFailure } =
 test('built extension includes panel, worker dependencies and narrowly scoped permissions', async () => {
   assert.equal(manifest.manifest_version, 3);
   assert.deepEqual(manifest.permissions, ['sidePanel', 'scripting', 'storage']);
-  assert.deepEqual(manifest.host_permissions, ['https://www.youtube.com/*']);
+  assert.deepEqual(manifest.host_permissions, [
+    'https://www.youtube.com/*',
+    'https://api.openai.com/*',
+  ]);
   const html = await readFile(new URL(manifest.side_panel.default_path, dist), 'utf8');
   const resources = [...html.matchAll(/(?:src|href)="([^"\s]+\.(?:js|css))"/g)];
   assert.ok(resources.some(([, path]) => path.endsWith('.js')));
