@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "pnpm build && node --test tests/extension.test.mjs"
+    "test": "pnpm build && node --test tests/*.test.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

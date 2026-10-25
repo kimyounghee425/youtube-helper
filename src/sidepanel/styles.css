@@ -43,3 +43,33 @@ body {
   background: color-mix(in srgb, currentColor 6%, transparent);
   border-radius: 8px;
 }
+
+.retry-button {
+  padding: 10px 16px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  background: Canvas;
+  color: CanvasText;
+  font: inherit;
+  cursor: pointer;
+}
+
+.retry-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.retry-button:focus-visible {
+  outline: 3px solid Highlight;
+  outline-offset: 3px;
+}
+
+.video-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 12px;
+}
+
+.video-info dd {
+  margin: 0;
+}
